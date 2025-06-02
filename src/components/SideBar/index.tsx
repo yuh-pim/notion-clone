@@ -31,16 +31,14 @@ const SideBar: FC<Props> = ({ onSearchButtonClicked }) => {
     await authRepository.signout();
     currentUserStore.set(undefined);
     noteStore.clear();
-  }
+  };
+
   return (
     <>
       <aside className="group/sidebar h-full bg-neutral-100 overflow-y-auto relative flex flex-col w-60">
         <div>
           <div>
-            <UserItem
-              user={currentUserStore.currentUser!}
-              signout={signout}
-            />
+            <UserItem user={currentUserStore.currentUser!} signout={signout} />
             <Item label="検索" icon={Search} onClick={onSearchButtonClicked} />
           </div>
           <div className="mt-4">
